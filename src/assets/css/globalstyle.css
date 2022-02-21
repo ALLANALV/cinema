@@ -1,0 +1,22 @@
+body,div,img,nav,ul,li,header,
+input,form,p,label,img,button,
+section{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+:root{
+    font-size: 8px;
+    font-family: sans-serif;
+
+    --color-primary: rgb(236, 0, 0);
+    --color-second: rgb(39, 38, 38);
+}
