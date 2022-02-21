@@ -38,8 +38,6 @@ function createButton(parent, value) {
     button.innerText = `Comprar por: R$${value},00`
 
     button.addEventListener('click', () => {
-        const body = document.querySelector('body');
-        body.classList.add('.ativeBackground')
         formulario.classList.add('ativarForm');
 
         const submit_data_user = document.getElementById('btnsubmit');
