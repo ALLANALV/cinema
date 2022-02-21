@@ -39,7 +39,6 @@ main{
     /* seção filme */
     .secao-filmes{
         height: 184px;
-        border: 2px dashed red;
         background-color: #000;
     }
     .postercinema{
@@ -73,16 +72,27 @@ main{
         width: 100%;
     }
     .listMovie{
-        overflow-x: hidden;
         margin-top: 10px;
         width: 100%;
         display: flex;
-        overflow: scroll;
+        overflow-x: scroll;
+        padding: 15px 0px;
     }
+    .listMovie::-webkit-scrollbar{
+        height: 10px;
+        width: 20px;
+        background-color: #000;
+    }
+    .listMovie::-webkit-scrollbar-thumb{
+        border-radius: 8px;
+        background-color: var(--color-primary);
+    }
+
     .listMovie li{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        margin: 0px 15px;
     }
     .listMovie li img{
         height: 270px;
@@ -143,4 +153,130 @@ main{
         cursor: pointer;
     }
     /* seção filme */
+    /* formulario */
+    form{
+        display: none;
+    }
+    .ativarForm{
+        background-color: #e4e4e4;
+        width: 300px;
+        padding: 10px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 7px;
+        position: absolute;
+        left: 50%;
+        top: 115%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #000;
+        box-shadow: 10px 10px 15px #000;
+    }
+    .ativarForm h2{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .desativarForm{
+        display: none;
+    }
+    .icoClose{
+        background-color: var(--color-primary);
+        font-weight: bold;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 3%;
+        right: 3%;
+    }
+    .icoClose:hover{
+        cursor: pointer;
+    }
+    label{
+        font-size: 2rem;
+    }
+    input{
+        padding: 3px 2px;
+        outline: none;
+        width: 100%;
+    }
+    #resultado{
+        margin: 10px 0px;
+        color: var(--color-primary);
+        background-color: #fff;
+        padding: 5px;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    /* formulario */
 /* MAIN */
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 640px) {
+    header{
+        flex-direction: row;
+    }
+    .logo{
+        width: 130px;
+    }
+    .main-menu ul li a{
+        font-size: 2.2rem;
+    }
+    .boxMovives h2{
+        font-size: 2.5rem;
+    }
+    .listMovie li img{
+        width: 320px;
+        height: 450px;
+    }
+    .listMovie li .infor{
+        width: 320px;
+    }
+    .listMovie li button{
+        width: 320px;
+    }
+    .secao-filmes{
+        height: 295px;
+    }
+    .postercinema{
+        height: 295px;
+    }
+    .postercinema p{
+        font-size: 3rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .secao-filmes{
+        height: 500px;
+    }
+    .postercinema{
+        height: 500px;
+    }
+
+    .ativarForm{
+        width: 500px;
+    }
+    
+}
+@media screen and (min-width: 1550px){
+    .secao-filmes{
+        height: 600px;
+    }
+    .postercinema{
+        height: 600px;
+    }
+    #listTopFive{
+        justify-content: center;
+        overflow-x: hidden;
+    }
+}
+/* MEDIA QUERIES */

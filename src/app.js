@@ -31,9 +31,23 @@ function createlist(id, movies) {
     });
 }
 
+const formulario = document.querySelector('form');
+
 function createButton(parent, value) {
     const button = document.createElement('button');
     button.innerText = `Comprar por: R$${value},00`
+
+    button.addEventListener('click', () => {
+        const body = document.querySelector('body');
+        body.classList.add('.ativeBackground')
+        formulario.classList.add('ativarForm');
+
+        const submit_data_user = document.getElementById('btnsubmit');
+        submit_data_user.addEventListener('click', (event) => {
+            event.preventDefault()
+            userDatas()
+        })
+    })
 
     parent.appendChild(button)
 }
@@ -50,4 +64,28 @@ createlist(list_filmes_acao, filterByCategory('acao'));
 createlist(list_filmes_aventura, filterByCategory('aventura'));
 createlist(list_filmes_terror, filterByCategory('terror'));
 createlist(list_filmes_ficcao, filterByCategory('ficcao cientifica'));
-createlist(list_filmes_fantasia, filterByCategory('fantasia'))
+createlist(list_filmes_fantasia, filterByCategory('fantasia'));
+
+
+function userDatas() {
+    const aviso = document.getElementById('resultado');
+    const inputNome = document.getElementById('nome');
+    const inputIdade = document.getElementById('idade');
+    const inputCPF = document.getElementById('cpf');
+
+    const user = new Person(inputNome.value, inputIdade.value, inputCPF.value);
+
+    if (typeof inputCPF.value !== 'number' || typeof inputIdade.value !== 'number') {
+
+        aviso.innerText = 'campo de cpf e/ou idade foi preenchido de forma incorreta, por favor preencha apenas com numeros'
+    }
+
+    console.log(user)
+    console.log(aviso)
+}
+
+
+const icoClose = document.querySelector('.icoClose')
+icoClose.addEventListener('click', () => {
+    formulario.classList.add('desativarForm')
+})

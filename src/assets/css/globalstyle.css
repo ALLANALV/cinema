@@ -5,7 +5,10 @@ section{
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    height: 100vh;
+    background-color: var(--color-second);
+}
 ul{
     list-style: none;
 }
@@ -19,4 +22,10 @@ a{
 
     --color-primary: rgb(236, 0, 0);
     --color-second: rgb(39, 38, 38);
+}
+
+
+.ativeBackground{
+    opacity: 0.5;
+    background-color: #000;
 }
