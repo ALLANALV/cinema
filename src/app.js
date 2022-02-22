@@ -29,10 +29,10 @@ function createlist(id, movies) {
 
         id.appendChild(item_list)
     });
+
 }
 
 const formulario = document.querySelector('form');
-
 function createButton(parent, value) {
     const button = document.createElement('button');
     button.innerText = `Comprar por: R$${value},00`
@@ -73,13 +73,13 @@ function userDatas() {
 
     const user = new Person(inputNome.value, inputIdade.value, inputCPF.value);
 
-    if (typeof inputCPF.value !== 'number' || typeof inputIdade.value !== 'number') {
-
+    if (inputCPF.value != Number(inputCPF.value) || inputIdade.value != Number(inputIdade.value)) {
         aviso.innerText = 'campo de cpf e/ou idade foi preenchido de forma incorreta, por favor preencha apenas com numeros'
+    } else {
+        formulario.classList.add('desativarForm')
     }
 
     console.log(user)
-    console.log(aviso)
 }
 
 
